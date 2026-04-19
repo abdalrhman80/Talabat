@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="C:/Users/abdal/Downloads/README.md" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Talabat.Api/Talabat.Api.csproj" />
+  <Project Path="Talabat.Application/Talabat.Application.csproj" />
+  <Project Path="Talabat.Domain/Talabat.Domain.csproj" />
+  <Project Path="Talabat.Infrastructure/Talabat.Infrastructure.csproj" />
+</Solution>
