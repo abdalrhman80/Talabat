@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Talabat.Application.Auth.Commands.ConfirmEmail;
 using Talabat.Application.Auth.Commands.ForgetPassword;
@@ -30,14 +29,14 @@ namespace Talabat.Api.Controllers
             });
         }
 
-        [HttpGet("confirmEmail")]
+        [HttpPost("confirmEmail")]
         public async Task<IActionResult> ConfirmEmail([FromBody] ConfirmEmailCommand command)
         {
             await _mediator.Send(command);
             return Ok(new { Message = "Email confirmed successfully. You can now login" });
         }
 
-        [HttpGet("resendConfirmationEmail")]
+        [HttpPost("resendConfirmationEmail")]
         public async Task<IActionResult> ResendConfirmation([FromBody] ResendConfirmationCommand command)
         {
             await _mediator.Send(command);
@@ -65,7 +64,7 @@ namespace Talabat.Api.Controllers
             return Ok(new { Message = "Password has been reset successfully" });
         }
 
-        [HttpGet("refreshToken")]
+        [HttpPost("refreshToken")]
         public async Task<IActionResult> RefreshToken([FromQuery] RefreshTokenCommand command)
         {
             var result = await _mediator.Send(command);
